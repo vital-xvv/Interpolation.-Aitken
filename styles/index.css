@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+:root {
+    --background-color:#213502;
+    --main-color: #7EA310;
+    --container-backgr: #DFE667;
+}
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #213502;
+    min-height: 100vh;
+}
+
+.main__container{
+    background-color: var(--container-backgr);
+    width: 600px;
+    margin: 40px auto;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+h1 {
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+    border: 3px solid var(--main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form__container {
+    background: #54C2CC;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border: 3px solid var(--background-color);
+    margin-bottom: 2rem;
+}
+
+.form__container span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.form__container .simple__input {
+    border-radius: .8rem;
+    padding: .3rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    width: 7rem;
+    font-weight: 500;
+    border: 2px solid black;
+}
+
+.form__container .section {
+    margin: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.buttons__container {
+    display: flex;
+    background: #20525C;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    width: 100%;
+    background: var(--main-color);
+    text-align: center;
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    margin: .5rem;
+    color: #fff;
+    border: 3px solid var(--background-color);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.buttons__container .button:hover {
+    background-color: var(--background-color);
+}
+
+.submit__button.button {
+    margin: 0;
+    margin-top: 1.5rem;
+    background: #20525C;
+    transition: .3s;
+}
+
+.submit__button.button:hover {
+    background-color: var(--background-color);
+}
+
+.calculations {
+    background: var(--main-color);
+}
+
+.results {
+    border: 3px solid var(--background-color);
+    border-radius: 1rem;
+}
+
+.errors {
+    background: #54C2CC;
+}
+
+.hide {
+    display: none;
+}
