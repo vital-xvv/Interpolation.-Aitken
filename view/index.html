@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratory work 3. Vitalii Huzii</title>
-    <link rel="stylesheet" href="../styles/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <div class="main__container">
-        <h1>Interpolation. Aitken Scheme</h1>
-        <div class="form__container">
-            <form action="/result" method='post' class="main__form">
-                <div class="interval section">
-                    <span>Limits:</span><input type="text" placeholder="a" class="simple__input" name="a"><span>to</span>
-                    <input type="text" placeholder="b" class="simple__input" name="b"> 
-                </div>
-                <div class="section">
-                    <span>Breakpoints:</span><input type="text" placeholder="n" class="simple__input" name="n">
-                </div>
-                <div class="section">
-                    <span>Searched value:</span><input type="text" placeholder="x0" class="simple__input" name="x0">
-                </div>
-                <div class="submit">
-                    <div class="submit__button button">Submit</div>
-                </div>
-            </form>
+      <h1>Interpolation. Aitken Scheme</h1>
+      <div class="form__container">
+        <form action="/result" method="post" class="main__form">
+          <div class="interval section">
+            <span>Limits:</span
+            ><input
+              type="text"
+              placeholder="a"
+              class="simple__input"
+              name="a"
+            /><span>to</span>
+            <input type="text" placeholder="b" class="simple__input" name="b" />
+          </div>
+          <div class="section">
+            <span>Breakpoints:</span
+            ><input
+              type="text"
+              placeholder="n"
+              class="simple__input"
+              name="n"
+            />
+          </div>
+          <div class="section">
+            <span>Searched value:</span
+            ><input
+              type="text"
+              placeholder="x0"
+              class="simple__input"
+              name="x0"
+            />
+          </div>
+          <div class="submit">
+            <div class="submit__button button">Submit</div>
+          </div>
+        </form>
+      </div>
+      <div class="buttons__container">
+        <div class="button__calc button">Calculation</div>
+        <div class="button__error button">Error</div>
+      </div>
+      <div class="calculations results hide">
+        <div class="graph">
+          <canvas id="chartReal" width="400" height="200"></canvas>
         </div>
-        <div class="buttons__container">
-            <div class="button__calc button">Calculation</div>
-            <div class="button__error button">Error</div>
+        <div class="graph">
+          <canvas id="chartInterpolated" width="400" height="200"></canvas>
         </div>
-        <div class="calculations results">
-            <div class="graph">
-                <canvas></canvas>
-            </div>
-            <div class="graph">
-                <canvas></canvas>
-            </div>
+        <p id="x0res"></p>
+      </div>
+      <div class="errors results hide">
+        <div class="graph">
+          <canvas></canvas>
         </div>
-        <div class="errors results hide">
-            <div class="graph">
-                <canvas></canvas>
-            </div>
-            <div class="graph">
-                <canvas></canvas>
-            </div>
+        <div class="graph">
+          <canvas></canvas>
         </div>
+      </div>
     </div>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="view-controller.js"></script>
+  </body>
 </html>
