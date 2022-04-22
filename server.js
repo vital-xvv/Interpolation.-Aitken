@@ -55,7 +55,39 @@ server.get('/calculation', (req, res) => {
 })
 
 server.get('/error', (req, res) => {
-    res.json({x:[1,2,3]});
+
+    var response = aitkenCalc(a, b, n, x0)
+
+    var error = (aitkenCalc(a, b, n, x0).res - aitkenCalc(a+1, b+1, n, x0).res)/((x0-a)/(b+1 - a))
+
+    var nexac = []
+    var ni = []
+    var k = []
+
+    for(let i = 1; i <= 10; i++ ){
+        nexac.push((aitkenCalc(a, b, i, x0).res - Math.pow(1+Math.pow(Math.E, -x0), -1)));
+        ni.push(((aitkenCalc(a, b, i, x0).res - aitkenCalc(a+1, b+1, i, x0).res)/((x0-a)/(b+1 - a))).toFixed(5))
+    }
+
+    for(let i = 0; i < 10; i++ ){
+        if(ni[i] === 0 || ni[i] === Infinity || nexac[i] === Infinity) {
+            k.push(0)
+        }
+        else{k.push(1-nexac[i]/ni[i])}
+        
+    }
+
+    var xnew = response.xi
+    var tempY = []
+    for(let i = 0; i < xnew.length - 1 ; i++){
+        xnew[i] = parseFloat(((x0 - xnew[i])/(xnew[i+1] - xnew[i])).toFixed(3))
+    }
+    xnew.sort()
+    for(let i = 0; i < xnew.length - 1 ; i++){
+        tempY.push(- Math.log10(Math.abs(aitkenCalc(xnew[0], xnew[xnew.length-1], n, xnew[i]).res - aitkenCalc(xnew[0], xnew[xnew.length-1], n+1, xnew[i]).res)))
+    }
+
+    res.json({xnew, tempY, error, nexac, ni , k});
 })
 
 

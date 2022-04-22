@@ -26,7 +26,7 @@ function aitkenCalc(a, b, n, x0){
         k++;
     }
 
-    for(let i = 0; i < xi.length; i++){
+    for(let i = 1; i < xi.length; i++){
         if(x0 === xi[i]){
             index = i;
             break;
@@ -51,7 +51,7 @@ function aitkenCalc(a, b, n, x0){
         }
     }
 
-    if(res === 0 || res !== parseFloat(yi[index].toFixed(3))) res = yi[index]
+    if(res === 0 || res !== parseFloat(yi[index].toFixed(3)) || res === Infinity) res = yi[index]
 
     return {xi, yi, res}
 }

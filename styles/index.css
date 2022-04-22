@@ -87,8 +87,6 @@ h1 {
     border: 3px solid var(--background-color);
     font-weight: 600;
     transition: .3s;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .buttons__container .button:hover {
@@ -108,32 +106,40 @@ h1 {
 
 .calculations {
     background: var(--main-color);
+    transition: .3s ease-in-out;
 }
 
 .results {
     border: 3px solid var(--background-color);
     border-radius: 1rem;
     padding: 0.5rem 1rem;
-};
+}
 
 .errors {
-    background-color: #54C2CC;
+    background: #54C2CC;
+    transition: .3s ease-in-out;
+    
 }
 
 .hide {
-    display: none;
+    position: absolute;
+    transform: scale(0);
+    /* top: -9999px;
+    left: -9999px; */
+}
+
+canvas {
+    width: 400px;
+    height: 200px;
 }
 
 .graph {
-    background: #fff;
     border: 3px solid var(--background-color);
     border-radius: 1rem;
+    background: #fff;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 p {
@@ -142,4 +148,19 @@ p {
     border-radius: 1rem;
     padding: .5rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
 }
+table{
+    width: 100%;
+    overflow: hidden;
+    padding: .5rem;
+      
+}
+ th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+   
+}
+
+tr:hover {background-color: coral;}
